@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import { company } from '../data.js';
 import Grand_Reality_Logo from '../assets/Grand_Reality_Cyan_Logo_Bgr.png';
+import Grand_Reality_Inverse from '../assets/Grand_Reality_Logo_Inverse.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={Grand_Reality_Logo} alt="Grand Reality" width="82" height="76" />
+          <img src={Grand_Reality_Inverse} alt="Grand Reality" width="82" height="76" />
           <p>Building premium residential spaces with quality, transparency and commitment.</p>
           <div className="social">
             {['Facebook', 'Instagram', 'Linkedin', 'Youtube'].map((n) => (
