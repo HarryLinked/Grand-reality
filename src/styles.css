@@ -3,7 +3,7 @@
   --green: #202e40;
   --sage: #5c6a87;
   --sky: #F4F0E7;
-  --sand: #dededeba;
+  --sand: #dedede29;
   --ink: #060606;
   --muted: #566074;
   --line: #e2e9f6;
@@ -258,12 +258,12 @@ em {
 
 .btn-outline-light {
   background: transparent;
-  color: #ffffff;
-  border-color: #ffffff;
+  color: var(--black);
+  border-color: var(--black);
 }
 
 .btn-outline-light:hover {
-  background: #2d7bff;
+  background: #ecedeea8;
 }
 
 .btn-white {
@@ -929,14 +929,14 @@ em {
 
 .why-dark .h-md {
   margin-bottom: 30px;
-  color: #000000;
+  color: #050d25;
 }
 
 .why-dark::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(./assets/coming-soon-project1.png) no-repeat center center/cover;
+  background: url(./assets/coming-soon-project.webp) no-repeat center center/cover;
   background-size: cover;
   background-position: center;
   opacity: 0.7;
@@ -1037,7 +1037,8 @@ em {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #f1f7ff 0%, #fbfdff 48%, #eef5ff 100%);
-  margin: 30px 0px 30px 0px;
+  margin: 30px 0px 0px 0px;
+  padding: 50px;
 }
 
 .faq-section::before {
@@ -1075,6 +1076,7 @@ em {
   max-width: 900px;
   margin-inline: auto;
   display: grid;
+  margin-top: 40px;
   gap: 14px;
 }
 
@@ -1195,10 +1197,10 @@ em {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(./assets/Black_top_road.png) no-repeat center center/cover;
+  background: url(./assets/tesla-p-3-n.webp) no-repeat center center/cover;
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.7;
   /* Adjust transparency */
   z-index: -1;
 }
@@ -1381,8 +1383,8 @@ em {
   grid-template-columns: minmax(240px, 27%) 1fr;
   gap: 56px;
   align-items: center;
-  background: #fbfcfe;
   padding: clamp(30px, 8vw, 30px) 0;
+  margin: 30px 200px;
 }
 
 .commit-img {
@@ -1398,7 +1400,6 @@ em {
   grid-template-columns: 1fr 1.25fr;
   gap: 40px;
   align-items: center;
-  padding-right: max(24px, calc((100vw - 1200px) / 2));
 }
 
 .commit-copy p {
@@ -1452,10 +1453,10 @@ em {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(./assets/coming-soon-project.webp) no-repeat center center/cover;
+  background: url(./assets/tesla-p-2-n.webp) no-repeat center center/cover;
   background-size: cover;
   background-position: center;
-  opacity: 0.7;
+  opacity: 0.5;
   /* Adjust transparency */
   z-index: -1;
 }
@@ -1467,12 +1468,16 @@ em {
   align-items: start;
 }
 
-.journey-copy .h-md {
-  color: #ffffff;
+.journey-copy .h-md.light {
+  color: var(--black);
+}
+
+.timeline .t-year{
+  color: var(--black);
 }
 
 .journey-copy p {
-  color: #d4d4d4;
+  color: var(--black);
   font-size: .88rem;
   line-height: 1.8;
   margin: 16px 0 24px;
@@ -1532,13 +1537,13 @@ em {
 }
 
 .timeline h3 {
-  color: var(--white);
+  color: var(--black);
   font-size: .92rem;
   margin-bottom: 10px;
 }
 
 .timeline p {
-  color: #d4d4d4;
+  color: var(--black);
   font-size: .82rem;
   line-height: 1.7;
 }
@@ -2452,7 +2457,6 @@ em {
 .cp-why {
   padding-top: 40px;
   padding-bottom: 36px;
-  background: #c4c4c44c;
 }
 
 .two-col.rev {
@@ -2675,6 +2679,10 @@ em {
   align-items: center;
   background: #071a3f;
   overflow: hidden;
+}
+
+.partner-hero+.section{
+  margin: 40px 0px;
 }
 
 .ph-img {
