@@ -33,7 +33,7 @@ const amenities = [
 
 const location = [
   { icon: 'Landmark', title: 'Connectivity', items: [['Mambakkam', '6 mins'], ['Medavakkam', '12 mins'], ['GST Road', '13 mins'], ['ECR', '22 mins'], ['Airport', '35 mins']] },
-  { icon: 'Building2', title: 'Schools', items: [['Christwood School', '5 mins'], ['Vellammal Vidyalayam', '6 mins'], ['Maharishi Vidya Mandir', '6 mins'], ['Tatva Primary School', '3 mins'], ['Vels School of Maritime Studies', '13 mins']] },
+  { icon: 'Building2', title: 'Schools', items: [['Tatva Primary School', '3 mins'], ['Christwood School', '5 mins'], ['Vellammal Vidyalayam', '6 mins'], ['Maharishi Vidya Mandir', '6 mins'], ['Vels School of Maritime Studies', '13 mins']] },
   { icon: 'MapPin', title: 'Colleges', items: [['Prince Shri Venkateshwara Padmavathy Engg College', '4 mins'], ['VIT University', '10 mins'], ['Agni College of Technology', '13 mins'], ['Vels Institute of Science & Technology', '13 mins']] },
 ];
 

@@ -34,7 +34,6 @@ const why = [
   { icon: 'MapPin', title: 'Prime Locations', text: 'Carefully selected locations with great connectivity and future growth.' },
   { icon: 'Building2', title: 'Quality Construction', text: 'High-quality materials and modern construction techniques.' },
   { icon: 'Clock', title: 'Timely Delivery', text: 'We value your time and ensure projects are delivered as promised.' },
-  { icon: 'ShieldCheck', title: 'Transparent Process', text: 'Clear communication and transparency at every stage of development.' },
   { icon: 'Users', title: 'Trusted By Many', text: 'Hundreds of happy families who trust us for their dream homes.' },
 ];
 
