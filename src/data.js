@@ -2,10 +2,9 @@ import Sri_Mayura from './assets/Sri_Mayura.png';
 import Tesla_City from './assets/teslahero.png';
 import mayura_gate from './assets/mayura_gate.png';
 import mayura_road from './assets/mayura_broad_road.png';
-import Mayura_Hero_Banner from './assets/Grand_Square_Hero.png';
+import Mayura_Hero_Banner from './assets/Grand_Square_hero.png';
 import Mayura_Plot_Hero_Banner from './assets/plot1.png';
 import Grand_Square_Hero_Banner from './assets/hero_homep.png';
-import Grand_Square_Gallery from './assets/Grand_Square_hero.png';
 import Home_about from './assets/home-about-image-final.webp';
 import Home_about_n from './assets/home-about-img.webp';
 import street_light from './assets/Street_Lights_Mayura.png';
@@ -118,45 +117,7 @@ export const completedProjects = {
     ],
     mapQuery: 'Kundrathur, Chennai',
     mapImage: '/images/map-mayura.jpg',
-  },
-  'grand-square': {
-    name: ['Grand', 'Square'],
-    place: 'Tambaram, Chennai',
-    intro: 'Premium apartments in the heart of Tambaram, designed for modern families who want comfort and convenience.',
-    heroImages: [Grand_Square_Hero_Banner],
-    aboutTitle: ['A Landmark Address', 'In Tambaram'],
-    about: 'Grand Square is a completed apartment community in Tambaram offering well-planned homes, quality finishes and easy access to schools, hospitals and the railway station.',
-    highlights: ['DTCP Approved Project', 'Spacious 2 & 3 BHK Homes', 'Covered Car Parking', '24/7 Security & CCTV', 'Clear Title & Legal Compliance'],
-    galleryImages: [Grand_Square_Gallery, Home_about, Home_about_n],
-    stats: [
-      { icon: 'Map', label: 'Total Area', value: '1.2 Acres' },
-      { icon: 'LayoutGrid', label: 'Total Units', value: '48' },
-      { icon: 'Ruler', label: 'Unit Sizes', value: '950 - 1450 Sq.ft' },
-      { icon: 'Building2', label: 'Project Status', value: 'Completed' },
-      { icon: 'ShieldCheck', label: 'Possession', value: 'Ready to Move' },
-    ],
-    sideImage: Interior,
-    whyTitle: 'Grand Square',
-    why: [
-      { icon: 'MapPin', title: 'Prime Location', text: 'Walkable to Tambaram railway station, schools and markets.' },
-      { icon: 'TrendingUp', title: 'High Appreciation Potential', text: 'Established neighbourhood with steady demand.' },
-      { icon: 'Route', title: 'Excellent Connectivity', text: 'Quick access to GST Road, the airport and the OMR corridor.' },
-      { icon: 'Trees', title: 'Comfortable Living', text: 'Well-ventilated homes with landscaped common areas.' },
-    ],
-    specs: [
-      { icon: 'ArrowUpDown', label: 'Lift Access', detail: 'Lift access makes it convenient for residents to reach every floor of the apartment community.', image: Lift },
-      { icon: 'Car', label: 'Covered Parking', detail: 'Dedicated covered parking keeps residents’ vehicles sheltered and close to home.', image: Parking },
-      { icon: 'Zap', label: 'Power Backup', detail: 'Power backup helps keep essential home comforts available during interruptions to the mains supply.', image: Power },
-      { icon: 'Cctv', label: 'CCTV Security', detail: 'CCTV surveillance helps monitor shared spaces and supports a more secure community.', image: CCTV },
-      { icon: 'Droplets', label: 'Rainwater Harvesting', detail: 'Rainwater harvesting supports responsible water management within the development.', image: Rainwater },
-      { icon: 'Baby', label: 'Kids Play Area', detail: 'A dedicated play area gives children space to play close to home.', image: KidsPlayArea },
-    ],
-    near: [
-      ['Tambaram Railway Station', '5 mins'], ['Chromepet', '12 mins'], ['GST Road', '5 mins'],
-      ['Leading Schools & Colleges', '10 mins'], ['Chennai International Airport', '20 mins'],
-    ],
-    mapQuery: 'Tambaram, Chennai',
-  },
+  }
 };
 
 export const navItems = [

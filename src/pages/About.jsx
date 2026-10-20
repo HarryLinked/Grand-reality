@@ -1,13 +1,11 @@
 import Icon from '../components/Icon.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
-import homeaboutfinal from '../assets/home-about-image-final.webp';
 import thoughtfulDesignImage from '../assets/Thoughful_Design.png';
 import premiumConstructionImage from '../assets/Premium_Construction.png';
 import lifestyleCommunitiesImage from '../assets/Lifestyle_Communities.png';
 import Interior1 from '../assets/Interior_banner.png';
 import Interior from '../assets/Interior.png';
 import plot from '../assets/plot1.png';
-import homeaboutfinal2 from '../assets/home-about-img.webp';
 import { HeroCarousel } from '../components/Slider.jsx';
 import about_hero from '../assets/about_hero.png';
 
