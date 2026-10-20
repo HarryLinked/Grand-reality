@@ -19,7 +19,7 @@ import spec_parks from '../assets/icon-parks.webp';
 import spec_roads from '../assets/icon-blacktop-roads.webp';
 import security from '../assets/Secure_Environment.png';
 import parks from '../assets/parks_&_greens.png';
-import road from '../assets/Narrow_Road.png';
+import road from '../assets/Narrow_road.png';
 import night from '../assets/night.png';
 
 
