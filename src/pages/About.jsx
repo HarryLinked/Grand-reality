@@ -1,8 +1,8 @@
 import Icon from '../components/Icon.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
-import thoughtfulDesignImage from '../assets/Thoughful_Design.png';
-import premiumConstructionImage from '../assets/Premium_Construction.png';
-import lifestyleCommunitiesImage from '../assets/Lifestyle_Communities.png';
+import thoughtfulDesignImage from '../assets/Thoughful_Design1.png';
+import premiumConstructionImage from '../assets/Premium_Construction1.png';
+import lifestyleCommunitiesImage from '../assets/Lifestyle_Communities2.png';
 import Interior1 from '../assets/Interior_banner.png';
 import Interior from '../assets/Interior.png';
 import plot from '../assets/plot1.png';

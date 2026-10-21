@@ -195,8 +195,11 @@ export default function Home() {
       {/* WHY CHOOSE */}
       <section className="why-dark">
         <div className="container">
-          <Eyebrow light>Why Choose Us</Eyebrow>
-          <WaveText as="h2" className="h-md light">Excellence In Every Step</WaveText>
+          <div className="why-intro">
+            <Eyebrow light>Why Choose Grand Reality</Eyebrow>
+            <WaveText as="h2" className="h-md light">Excellence<br /><em>In Every Step.</em></WaveText>
+            <p>From planning to possession, we ensure transparency, quality and a better tomorrow for every family.</p>
+          </div>
           <div className="grid-5">
             {why.map((w) => (
               <div className="why-card" key={w.title}>

@@ -139,7 +139,6 @@ em {
 .grid-5 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
 }
 
 /* ============ Type ============ */
@@ -932,64 +931,76 @@ em {
 
 /* ============ Home why (dark) ============ */
 .why-dark {
+  position: relative;
   color: #fff;
-  padding: clamp(90px, 9vw, 130px) 0;
-  margin: clamp(60px, 6vw, 90px) 0;
+  background: #202e40;
+  padding: clamp(48px, 6vw, 76px) 0;
+  margin: clamp(48px, 6vw, 76px) 0;
 }
 
-.why-dark .container{
+.why-dark .container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: clamp(28px, 5vw, 72px);
 }
 
 .why-dark .h-md {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
+}
+
+.why-intro {
+  flex: 0 0 29%;
+  max-width: 300px;
+}
+
+.why-intro .eyebrow {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.why-intro h2 em {
+  color: #4aa3ff;
+}
+
+.why-intro p {
+  color: #d3dbe5;
+  line-height: 1.55;
 }
 
 .why-dark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(./assets/coming-soon-project.webp) no-repeat center center/cover;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7;
-  /* Adjust transparency */
-  z-index: -1;
+  content: none;
+}
+
+.why-dark .grid-5 {
+  flex: 1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .why-card {
-  border: 1px solid rgba(255, 255, 255, .12);
-  background: var(--green);
-  border-radius: 6px;
-  padding: 28px 22px 26px;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, .12);
+  background: transparent;
+  border-radius: 0;
+  padding: 8px clamp(14px, 2vw, 28px);
   text-align: center;
-  color: var(--sage);
-  width: 210px;
-}
-
-.why-dark .container .why-card:hover{
-  transform: translate(0px,-5px);
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
+  color: #68afff;
+  width: auto;
 }
 
 .why-card h3 {
   color: var(--white);
-  font-size: 1rem;
-  margin: 16px 0 10px;
+  font-size: .98rem;
+  margin: 14px 0 8px;
 }
 
 .why-card p {
-  color: #b4b1b1;
+  color: #d3dbe5;
   font-size: .86rem;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
-.why-card .lucide{
-  color: white;
+.why-card .lucide {
+  color: #68afff;
 }
 
 /* ============ Dream CTA ============ */
@@ -3514,6 +3525,11 @@ em {
     gap: 12px;
   }
 
+  .why-dark .grid-5 {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
   .amenities {
     grid-template-columns: 1fr 1fr;
   }
@@ -3691,6 +3707,10 @@ em {
   .testimonial-carousel {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+  }
+
+  .why-dark .grid-5 {
+    grid-template-columns: 1fr;
   }
 
   .testimonial-carousel .t-card {
@@ -4371,12 +4391,15 @@ em {
 }
 
 @media(max-width : 950px){
-  
-  .why-dark .container{
-  display: block;
+  .why-dark .container {
+    display: block;
   }
 
-  .why-card{
+  .why-intro {
+    max-width: 420px;
+  }
+
+  .why-card {
     width: auto;
   }
 }
