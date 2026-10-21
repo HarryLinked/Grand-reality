@@ -87,12 +87,19 @@ export default function App() {
       return undefined;
     }
 
-    const observer = new IntersectionObserver(([entry]) => {
-      setShowContactButton(entry.boundingClientRect.bottom <= 0);
-    });
+    const compactViewport = window.matchMedia('(max-width: 980px)');
+    const updateVisibility = () => {
+      setShowContactButton(compactViewport.matches || hero.getBoundingClientRect().bottom <= 0);
+    };
+    const observer = new IntersectionObserver(updateVisibility);
     observer.observe(hero);
+    compactViewport.addEventListener('change', updateVisibility);
+    updateVisibility();
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      compactViewport.removeEventListener('change', updateVisibility);
+    };
   }, [pathname]);
 
   return (

@@ -135,7 +135,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container">
           <div className="stats-bar">
             {stats.map((s) => (
               <div className="stat" key={s.label}>
@@ -144,7 +143,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
       </section>
 
       {/* ABOUT */}
