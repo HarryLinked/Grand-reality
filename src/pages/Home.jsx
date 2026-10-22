@@ -8,7 +8,9 @@ import heroBannernew from '../assets/hero-banner.png';
 import heroBanner from '../assets/gr-hero-banner.png';
 import homeaboutfinal from '../assets/home-about-image-final.webp';
 import homeaboutfinal2 from '../assets/home-about-img.webp';
-import hero_home from '../assets/hero_home.png';
+import hero_home from '../assets/Home_banner.png';
+import hero_home1 from '../assets/Home_hero_2.png';
+import hero_home2 from '../assets/Home_hero_3.png';
 import hero_homep from '../assets/hero_homep.png';
 import Interior from '../assets/Interior.png';
 import villa1 from '../assets/villa1.png';
@@ -119,8 +121,8 @@ export default function Home() {
           label="Grand Reality featured homes"
           slides={[
             { src: hero_home, alt: 'Modern family home in a landscaped community' },
-            { src: hero_homep, alt: 'A welcoming contemporary residential space' },
-            { src: heroBanner, alt: 'Thoughtfully designed home by Grand Reality' },
+            { src: hero_home1, alt: 'A welcoming contemporary residential space' },
+            { src: hero_home2, alt: 'Thoughtfully designed home by Grand Reality' },
           ]}
         />
         
@@ -224,7 +226,7 @@ export default function Home() {
           <ul className="dream-contact">
             <li><Icon name="Phone" size={24} /><div><small>Call Us Now</small><a href={company.phoneHref}>{company.phone}</a></div></li>
             <li><Icon name="Mail" size={24} /><div><small>Email Us</small><a href={`mailto:${company.email}`}>{company.email}</a></div></li>
-            <li><Icon name="MapPin" size={24} /><div><small>Visit Our Office</small><span>{company.address.join(' ')}</span></div></li>
+            <li><Icon name="MapPin" size={44} /><div><small>Visit Our Office</small><span>{company.address.join(' ')}</span></div></li>
           </ul>
         </div>
       </section>

@@ -5,10 +5,7 @@ import ContactForm from '../components/ContactForm.jsx';
 import MapEmbed from '../components/Map.jsx';
 import { Eyebrow, WaveText } from '../components/Shared.jsx';
 import { company } from '../data.js';
-import { HeroCarousel } from '../components/Slider.jsx';
 import homeaboutfinal from '../assets/home-about-image-final.webp';
-import Interior from '../assets/Interior.png';
-import tesla_hero from '../assets/teslahero.png';
 
 export default function Contact() {
   const [params] = useSearchParams();
@@ -23,17 +20,13 @@ export default function Contact() {
   return (
     <>
       <section className="contact-hero">
-        <HeroCarousel
-          className="contact-hero-carousel"
-          label="Grand Reality homes"
-          hideControls
-          slides={[
-            { src: homeaboutfinal, alt: 'A home by Grand Reality' },
-          ]}
-        />
+        <div className="hero-carousel contact-hero-carousel">
+          <div className="hero-carousel-images">
+            <img className="hero-carousel-image is-active" src={homeaboutfinal} alt="A home by Grand Reality" />
+          </div>
+        </div>
         <div className="container ch-copy">
           <span className="eyebrow">Get In Touch</span>
-          <span className="rule-blue" aria-hidden="true" />
           <WaveText as="h1">We’d Love to Hear From <em>You</em></WaveText>
           <p>Our team is ready to assist you with any queries.<br />Let’s build something extraordinary together.</p>
         </div>

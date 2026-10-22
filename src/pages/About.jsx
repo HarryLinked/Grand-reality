@@ -3,10 +3,7 @@ import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
 import thoughtfulDesignImage from '../assets/Thoughful_Design1.png';
 import premiumConstructionImage from '../assets/Premium_Construction1.png';
 import lifestyleCommunitiesImage from '../assets/Lifestyle_Communities2.png';
-import Interior1 from '../assets/Interior_banner.png';
 import Interior from '../assets/Interior.png';
-import plot from '../assets/plot1.png';
-import { HeroCarousel } from '../components/Slider.jsx';
 import about_hero from '../assets/about_hero.png';
 
 const values = [
@@ -43,15 +40,11 @@ export default function About() {
           </div>
         </div>
         <div className="about-hero-img">
-          <HeroCarousel
-            className="about-hero-carousel"
-            label="About Grand Reality"
-            slides={[
-              { src: about_hero, alt: 'A home designed by Grand Reality' },
-              { src: plot, alt: 'Thoughtfully planned residential living' },
-              { src: Interior1, alt: 'A comfortable modern home interior' },
-            ]}
-          />
+          <div className="hero-carousel about-hero-carousel">
+            <div className="hero-carousel-images">
+              <img className="hero-carousel-image is-active" src={about_hero} alt="A home designed by Grand Reality" />
+            </div>
+          </div>
         </div>
       </section>
 

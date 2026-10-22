@@ -24,6 +24,7 @@ import ComingSoonProject from './assets/coming-soon-project.webp';
 import Mayura from './assets/Mayura.png';
 import mayura_plot from './assets/mayura_plot.png';
 import mayura_plot_road from './assets/mayura_plot_road.png';
+import Sri_Mayura_Entrance from './assets/Sri_Mayura_AvenueEntrance.png';
 
 
 export const company = {
@@ -60,7 +61,7 @@ export const completedProjects = {
     name: ['Sri Mayura', 'Avenue'],
     place: 'Kundrathur, Chennai',
     intro: 'Thoughtfully planned residential plots in a prime location, crafted for a peaceful and prosperous lifestyle.',
-    heroImages: [Mayura, mayura_plot, mayura_plot_road ],
+    heroImages: [Sri_Mayura_Entrance],
     aboutTitle: ['A Perfect Address', 'For Your Future'],
     about: 'Sri Mayura Avenue is a premium plotted development strategically located in Kundrathur, offering excellent connectivity, essential amenities, and a serene environment – ideal for building your dream home.',
     highlights: ['DTCP Approved Plots', 'Black Top Roads', 'Gated Community', '24/7 Security', 'Clear Title & Legal Compliance'],

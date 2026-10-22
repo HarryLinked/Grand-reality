@@ -1,10 +1,9 @@
 import Icon from '../components/Icon.jsx';
 import MapEmbed from '../components/Map.jsx';
-import { HeroCarousel, WindowSlider } from '../components/Slider.jsx';
+import { WindowSlider } from '../components/Slider.jsx';
 import { Btn, Eyebrow, WaveText } from '../components/Shared.jsx';
 import LocationAccordion from '../components/LocationAccordion.jsx';
 import SpecificationShowcase from '../components/SpecificationShowcase.jsx';
-import tesla_hero from '../assets/teslahero.png';
 import tesla_1_n from '../assets/tesla-p-1-n.webp';
 import tesla_2_n from '../assets/tesla-p-2-n.webp';
 import tesla_3_n from '../assets/tesla-p-3-n.webp';
@@ -20,7 +19,7 @@ import spec_roads from '../assets/icon-blacktop-roads.webp';
 import security from '../assets/Secure_Environment.png';
 import parks from '../assets/parks_&_greens.png';
 import road from '../assets/Narrow_road.png';
-import night from '../assets/night.png';
+import night from '../assets/Tesla_City_Gated_Entrance.png';
 
 
 const amenities = [
@@ -49,15 +48,11 @@ export default function TeslaCity() {
   return (
     <>
       <section className="tesla-hero">
-        <HeroCarousel
-          className="tesla-photo"
-          label="Tesla City featured views"
-          slides={[
-            { src: night, alt: 'The entrance to Tesla City' },
-            { src: tesla_1_n, alt: 'A view of Tesla City villas' },
-            { src: tesla_2_n, alt: 'Premium homes at Tesla City' },
-          ]}
-        />
+        <div className="hero-carousel tesla-photo">
+          <div className="hero-carousel-images">
+            <img className="hero-carousel-image is-active" src={night} alt="The entrance to Tesla City" />
+          </div>
+        </div>
         <div className="container tesla-copy">
           <span className="intro">Introducing</span>
           <span className="squig" aria-hidden="true" />

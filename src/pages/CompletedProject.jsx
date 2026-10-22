@@ -1,7 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom';
 import Icon from '../components/Icon.jsx';
 import MapEmbed from '../components/Map.jsx';
-import { HeroCarousel, ThumbGallery } from '../components/Slider.jsx';
+import { ThumbGallery } from '../components/Slider.jsx';
 import { BlueBanner } from '../components/ContactBand.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
 import LocationAccordion from '../components/LocationAccordion.jsx';
@@ -16,19 +16,16 @@ export default function CompletedProject() {
   return (
     <>
       <section className="cp-hero">
-        <HeroCarousel
-          key={slug}
-          className="cp-hero-img"
-          label={`${fullName} featured images`}
-          slides={p.heroImages.map((src, index) => ({ src, alt: `${fullName} featured image ${index + 1}` }))}
-        />
+        <div className="hero-carousel cp-hero-img">
+          <div className="hero-carousel-images">
+            <img className="hero-carousel-image is-active" src={p.heroImages[0]} alt={`${fullName} featured image 1`} />
+          </div>
+        </div>
         <div className="container">
           <div className="cp-hero-copy">
             <Eyebrow>Completed Project</Eyebrow>
             <WaveText as="h1">{p.name[0]}<br /><em>{p.name[1]}</em></WaveText>
             <p className="cp-place"><Icon name="MapPin" size={17} />{p.place}</p>
-            <p className="cp-intro">{p.intro}</p>
-            <Btn href="#" icon="Download" variant="outline" onClick={(e) => e.preventDefault()}>Download Brochure</Btn>
           </div>
         </div>
       </section>
@@ -44,6 +41,7 @@ export default function CompletedProject() {
             </ul>
           </div>
           <ThumbGallery images={p.galleryImages} alt={fullName} />
+          <Btn className="btn btn-primary" href="#" icon="Download" variant="outline" onClick={(e) => e.preventDefault()}>Download Brochure</Btn>
         </div>
       </section>
 

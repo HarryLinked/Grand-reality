@@ -3,10 +3,7 @@ import Icon from '../components/Icon.jsx';
 import Field, { validate } from '../components/Field.jsx';
 import { QuestionsBand } from '../components/ContactBand.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
-import channel_partner_hero from '../assets/channel-partner-new.png';
-import homeaboutfinal from '../assets/home-about-image-final.webp';
-import Interior from '../assets/Interior.png';
-import { HeroCarousel } from '../components/Slider.jsx';
+import channel_partner_hero from '../assets/Channel_Banner.png';
 
 const benefits = [
   { icon: 'Handshake', title: 'Strong Brand Association', text: 'Partner with a trusted real estate brand known for quality and dependability.' },
@@ -29,7 +26,7 @@ export default function ChannelPartners() {
   const [sent, setSent] = useState(false);
 
   const change = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value, files } = e.target;  
     setV((s) => ({ ...s, [name]: files ? files[0]?.name || '' : value }));
     setErrors((s) => ({ ...s, [name]: undefined }));
   };
@@ -46,15 +43,11 @@ export default function ChannelPartners() {
   return (
     <>
       <section className="partner-hero">
-        <HeroCarousel
-          className="ph-img"
-          label="Partner with Grand Reality"
-          slides={[
-            { src: channel_partner_hero, alt: 'Grand Reality channel partner network' },
-            { src: homeaboutfinal, alt: 'A residential community built for families' },
-            { src: Interior, alt: 'Modern residential interiors' },
-          ]}
-        />
+        <div className="hero-carousel ph-img">
+          <div className="hero-carousel-images">
+            <img className="hero-carousel-image is-active" src={channel_partner_hero} alt="Grand Reality channel partner network" />
+          </div>
+        </div>
         <div className="container ph-copy">
           <Eyebrow>Partner With Us</Eyebrow>
           <WaveText as="h1">Let’s Build<br />Success <em>Together.</em></WaveText>

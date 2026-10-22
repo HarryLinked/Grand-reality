@@ -2,6 +2,8 @@
 :root {
   --green: #202e40;
   --sage: #5c6a87;
+  --bright-blue: #aee5ff;
+  --mlue: #2061aa;
   --sky: #F4F0E7;
   --sand: #dedede29;
   --ink: #060606;
@@ -202,7 +204,7 @@ em {
 }
 
 .eyebrow.light {
-  color: #4aa3ff;
+  color: var(--bright-blue);
 }
 
 
@@ -566,7 +568,7 @@ em {
 .news-form button {
   width: 48px;
   border: 0;
-  background: var(--sage);
+  background: var(--mlue);
   color: #fff;
   border-radius: 0 4px 4px 0;
   display: grid;
@@ -639,6 +641,7 @@ em {
   max-width: 520px;
   width: 100%;
   position: relative;
+  display: none;
 }
 
 .tesla-hero img {
@@ -666,7 +669,6 @@ em {
   z-index: 2;
   transform: translateY(78px);
   background: var(--green);
-  color: #fff;
   border-radius: 12px;
   padding: 26px 20px;
   display: grid;
@@ -705,14 +707,14 @@ em {
 
 .stat strong {
   display: block;
-  color: #fff;
+  color: var(--bright-blue);
   font-size: 2rem;
   line-height: 1.1;
   font-weight: 700;
 }
 
 .stat span {
-  color: #d3def2;
+  color: var(--bright-blue);
   font-size: .85rem;
 }
 
@@ -933,7 +935,7 @@ em {
 .why-dark {
   position: relative;
   color: #fff;
-  background: #202e40;
+  background: var(--green);
   padding: clamp(48px, 6vw, 76px) 0;
   margin: clamp(48px, 6vw, 76px) 0;
 }
@@ -959,7 +961,7 @@ em {
 }
 
 .why-intro h2 em {
-  color: #4aa3ff;
+  color: var(--bright-blue);
 }
 
 .why-intro p {
@@ -987,6 +989,10 @@ em {
   width: auto;
 }
 
+.why-card:first-child{
+  border: none;
+}
+
 .why-card h3 {
   color: var(--white);
   font-size: .98rem;
@@ -1000,7 +1006,7 @@ em {
 }
 
 .why-card .lucide {
-  color: #68afff;
+  color: var(--bright-blue);
 }
 
 /* ============ Dream CTA ============ */
@@ -1233,7 +1239,7 @@ em {
   background: url(./assets/tesla-p-3-n.webp) no-repeat center center/cover;
   background-size: cover;
   background-position: center;
-  opacity: 0.7;
+  opacity: 01;
   /* Adjust transparency */
   z-index: -1;
 }
@@ -1478,7 +1484,7 @@ em {
 }
 
 .journey {
-  color: #000000;
+  color: var(--white);
   padding: clamp(90px, 9vw, 130px) 0;
 }
 
@@ -1489,7 +1495,7 @@ em {
   background: url(./assets/tesla-p-2-n.webp) no-repeat center center/cover;
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
+  opacity: 1;
   /* Adjust transparency */
   z-index: -1;
 }
@@ -1975,8 +1981,7 @@ em {
 .tesla-copy {
   position: relative;
   z-index: 2;
-  color: #fff;
-  -webkit-text-stroke: #000000;
+  color: var(--green);
 }
 
 .tesla-copy .intro {
@@ -2003,7 +2008,7 @@ em {
 }
 
 .ponmar {
-  color: #1aa7ec;
+  color: var(--green);
   letter-spacing: .42em;
   font-size: clamp(1.2rem, 2.4vw, 1.8rem);
   font-weight: 600;
@@ -2019,7 +2024,7 @@ em {
 }
 
 .tesla-copy .tag {
-  color: #e6eefc;
+  color: var(--white);
   line-height: 1.8;
 }
 
@@ -2335,6 +2340,10 @@ em {
   color: var(--green);
 }
 
+#empty-bar{
+  display: none;
+}
+
 .cp-intro {
   color: #34405a;
   font-size: .9rem;
@@ -2345,6 +2354,19 @@ em {
 
 .cp-about {
   padding-bottom: 36px;
+}
+
+.cp-about .two-col{
+  position: relative;
+  padding: 120px;
+}
+
+.cp-about .btn-primary{
+  position: absolute;
+  bottom: 40px;
+  left: 120px ;
+  width: min(250px, calc(100% - 48px));
+  white-space: normal;
 }
 
 .checks {
@@ -2368,6 +2390,8 @@ em {
 
 .tgallery {
   min-width: 0;
+  position: relative;
+  top: 30px;
 }
 
 .tg-main {
@@ -2456,7 +2480,7 @@ em {
 }
 
 .stat .lucide{
-  color:#ffffff;
+  color:var(--bright-blue);
 }
 
 .sb-item {
@@ -3339,6 +3363,19 @@ em {
     margin-left: 56px;
   }
 
+  .cp-about .two-col {
+    padding: clamp(24px, 8vw, 80px);
+    padding-bottom: clamp(96px, 14vw, 120px);
+  }
+
+  .cp-about .btn-primary {
+    bottom: clamp(24px, 4vw, 40px);
+    left: clamp(24px, 8vw, 80px);
+    width: 190px;
+    font-size: 0.7rem;
+    font-weight:100;
+  }
+
   .ha-card {
     left: -40px;
     width: min(220px, 48%);
@@ -3465,19 +3502,19 @@ em {
     grid-column: 1 / -1;
   }
 
-    .stats-bar{
-    top: 270px;
+  .stats-bar{
+    top: 160px;
     width: 100px;
-  }
-
-  .two-col{
-    margin-top: 120px;
   }
 }
 
 @media (max-width: 680px) {
   .location-accordion--horizontal {
     grid-template-columns: 1fr;
+  }
+
+  .why-card{
+    border-left: none;
   }
 
   .contact-modal-backdrop {
@@ -3807,6 +3844,7 @@ em {
   backdrop-filter: blur(8px);
   transform: none;
   transition: background .2s, transform .2s;
+  bottom: 100px;
 }
 
 .hero-carousel-arrow:hover {
@@ -3817,19 +3855,17 @@ em {
 .hero-carousel-prev {
   left: auto;
   right: 82px;
-  bottom: 60px;
 }
 
 .hero-carousel-next {
   right: 24px;
-  bottom: 60px;
 }
 
 .hero-carousel-pagination {
   position: absolute;
   z-index: 3;
   left: 50%;
-  bottom: 60px;
+  bottom: 100px;
   display: flex;
   gap: 9px;
   align-items: center;
@@ -3940,7 +3976,7 @@ em {
   border-radius: 50%;
   background: var(--green);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(0, 72, 160, .3);
+  box-shadow: 0 10px 30px var(--sage);
   font: inherit;
   font-weight: 700;
   transition: .2s ease-in-out;
@@ -4065,8 +4101,8 @@ em {
   white-space: nowrap;
 }
 
-.wave-word em{
-  color: var(--sage);
+.testimonial-heading .wave-text.h-md .wave-word{
+  color: var(--white);
 }
 
 .wave-char {
@@ -4269,7 +4305,7 @@ em {
   }
 
   .hero-carousel-pagination {
-    bottom: 28px;
+    bottom: 100px;
   }
 
   .tesla-about {
@@ -4290,29 +4326,11 @@ em {
   }
 
   .contact-hero {
-    min-height: 600px;
+    min-height: 715px;
   }
 }
 
 @media (max-width: 680px) {
-  .hero-carousel-arrow {
-    width: 38px;
-    height: 38px;
-    bottom: 14px;
-  }
-
-  .hero-carousel-prev {
-    left: auto;
-    right: 62px;
-  }
-
-  .hero-carousel-next {
-    right: 12px;
-  }
-
-  .hero-carousel-pagination {
-    bottom: 14px;
-  }
 
   .hero-carousel-dot {
     width: 8px;
@@ -4457,14 +4475,19 @@ em {
 }
 
 @media (min-width: 1905px) {
-  .home-hero,
-  .about-hero,
+  .home-hero
+  {
+    height: 915px;
+  }
+  
   .tesla-hero,
   .cp-hero,
-  .partner-hero,
-  .contact-hero {
-    height: 934px;
-    min-height: 934px;
+  .about-hero,
+  .partner-hero{
+    height: 715px;
+  }
+  .contact-hero{
+    height: 620px;
   }
 
   .home-hero-inner {
@@ -4494,8 +4517,12 @@ em {
 
   .home-hero .stats-bar {
     margin-top: 0;
-    top: 50px;
+    top: -60px;
     transform: none;
+  }
+
+  .home-about .two-col{
+    margin-top: 60px;
   }
 
   .about-hero-inner {
@@ -4505,25 +4532,44 @@ em {
   }
 
   .hero-carousel-arrow {
-    width: 38px;
-    height: 38px;
-    bottom: 14px;
+    width: 50px;
+    height: 50px;
+    bottom: 100px;
   }
 
   .hero-carousel-prev {
     left: auto;
-    right: 62px;
+    right: 100px;
   }
 
   .hero-carousel-next {
-    right: 12px;
+    right: 40px;
   }
 
   .hero-carousel-pagination {
-    bottom: 14px;
+    bottom: 100px;
   }
+}
 
-  .two-col{
-    margin-top: 120px;
+@media (max-width: 427px){
+  .tg-bar .arrow, .tg-thumbs .arrow{
+    display: none;
+  }
+}
+
+@media(max-width: 312px){
+  .tg-thumbs{
+    display: none;
+  }
+}
+@media(max-width: 320px){
+  .hero-carousel-arrow{
+    display: none;
+  }
+}
+
+@media(980px <= width <=1905px){
+  .stats-bar{
+    top: 60px;
   }
 }
