@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm.jsx';
 import MapEmbed from '../components/Map.jsx';
 import { Eyebrow, WaveText } from '../components/Shared.jsx';
 import { company } from '../data.js';
-import homeaboutfinal from '../assets/home-about-image-final.webp';
+import homeaboutfinal from '../assets/Contact_hero.png';
 
 export default function Contact() {
   const [params] = useSearchParams();
@@ -27,8 +27,7 @@ export default function Contact() {
         </div>
         <div className="container ch-copy">
           <span className="eyebrow">Get In Touch</span>
-          <WaveText as="h1">We’d Love to Hear From <em>You</em></WaveText>
-          <p>Our team is ready to assist you with any queries.<br />Let’s build something extraordinary together.</p>
+          <WaveText as="h1">We’d Love to <br />Hear From <em>You</em></WaveText>
         </div>
       </section>
 

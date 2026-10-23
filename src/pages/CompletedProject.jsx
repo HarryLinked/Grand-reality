@@ -41,7 +41,7 @@ export default function CompletedProject() {
             </ul>
           </div>
           <ThumbGallery images={p.galleryImages} alt={fullName} />
-          <Btn className="btn btn-primary" href="#" icon="Download" variant="outline" onClick={(e) => e.preventDefault()}>Download Brochure</Btn>
+          <Btn href="#" icon="Download" variant="primary" onClick={(e) => e.preventDefault()}>Download Brochure</Btn>
         </div>
       </section>
 

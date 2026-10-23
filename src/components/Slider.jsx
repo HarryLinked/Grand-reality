@@ -12,7 +12,7 @@ export function useCarouselAutoplay(advance, { paused = false, interval = 2000 }
   }, [advance, interval, paused]);
 }
 
-export function HeroCarousel({ slides, mobile_slides, label = 'Featured images', className = '', hideControls = false }) {
+export function HeroCarousel({ slides, mobile_slides, label = 'Featured images', className = '', hideControls = false, onActiveSlideChange }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const advance = useCallback(
@@ -22,10 +22,14 @@ export function HeroCarousel({ slides, mobile_slides, label = 'Featured images',
   const go = (direction) => setActiveSlide((current) => (current + direction + slides.length) % slides.length);
 
   useCarouselAutoplay(advance, { paused: isPaused || slides.length < 2, interval: 3000 });
+  useEffect(() => {
+    onActiveSlideChange?.(activeSlide);
+  }, [activeSlide, onActiveSlideChange]);
 
   return (
     <div
       className={`hero-carousel ${className}`}
+      data-active-slide={activeSlide}
       role="region"
       aria-label={label}
       aria-roledescription="carousel"

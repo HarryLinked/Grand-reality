@@ -8,16 +8,35 @@ import ContactButton from './ContactButton.jsx';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [sub, setSub] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => { setOpen(false); setSub(null); }, [pathname]);
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; }, [open]);
+  useEffect(() => {
+    const updateHeaderBackground = () => {
+      const hero = document.querySelector('main > section:first-child, main > div > section:first-child');
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+
+      setIsScrolled(hero ? hero.getBoundingClientRect().bottom <= header.offsetHeight : window.scrollY > 0);
+    };
+
+    updateHeaderBackground();
+    window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+    window.addEventListener('resize', updateHeaderBackground);
+
+    return () => {
+      window.removeEventListener('scroll', updateHeaderBackground);
+      window.removeEventListener('resize', updateHeaderBackground);
+    };
+  }, [pathname]);
 
   const isActive = (item) =>
     item.children ? item.children.some((c) => pathname === c.to) : item.to === '/' ? pathname === '/' : pathname.startsWith(item.to);
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
         <Link to="/" className="brand" aria-label="Grand Reality home">
           <img src={Grand_Reality_Logo} alt="Grand Reality" width="88" height="80" />

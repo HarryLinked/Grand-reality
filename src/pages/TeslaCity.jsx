@@ -19,7 +19,7 @@ import spec_roads from '../assets/icon-blacktop-roads.webp';
 import security from '../assets/Secure_Environment.png';
 import parks from '../assets/parks_&_greens.png';
 import road from '../assets/Narrow_road.png';
-import night from '../assets/Tesla_City_Gated_Entrance.png';
+import night from '../assets/Tesla.png';
 
 
 const amenities = [
@@ -54,11 +54,9 @@ export default function TeslaCity() {
           </div>
         </div>
         <div className="container tesla-copy">
-          <span className="intro">Introducing</span>
-          <span className="squig" aria-hidden="true" />
+          <span className="intro">Introducing</span><br />
           <WaveText as="h1">TESLA CITY</WaveText>
           <p className="ponmar">PONMAR</p>
-          <span className="rule" aria-hidden="true" />
           <p className="tag">Premium Villa Plots for a Lifestyle<br />That Defines You.</p>
         </div>
       </section>

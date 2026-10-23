@@ -3,7 +3,7 @@ import Icon from '../components/Icon.jsx';
 import Field, { validate } from '../components/Field.jsx';
 import { QuestionsBand } from '../components/ContactBand.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
-import channel_partner_hero from '../assets/Channel_Banner.png';
+import channel_partner_hero from '../assets/channel-partner-hero.png';
 
 const benefits = [
   { icon: 'Handshake', title: 'Strong Brand Association', text: 'Partner with a trusted real estate brand known for quality and dependability.' },

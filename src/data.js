@@ -24,7 +24,7 @@ import ComingSoonProject from './assets/coming-soon-project.webp';
 import Mayura from './assets/Mayura.png';
 import mayura_plot from './assets/mayura_plot.png';
 import mayura_plot_road from './assets/mayura_plot_road.png';
-import Sri_Mayura_Entrance from './assets/Sri_Mayura_AvenueEntrance.png';
+import Sri_Mayura_Entrance from './assets/Sri_Mayura_Gated.png';
 
 
 export const company = {

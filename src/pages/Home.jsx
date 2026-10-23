@@ -8,9 +8,9 @@ import heroBannernew from '../assets/hero-banner.png';
 import heroBanner from '../assets/gr-hero-banner.png';
 import homeaboutfinal from '../assets/home-about-image-final.webp';
 import homeaboutfinal2 from '../assets/home-about-img.webp';
-import hero_home from '../assets/Home_banner.png';
-import hero_home1 from '../assets/Home_hero_2.png';
-import hero_home2 from '../assets/Home_hero_3.png';
+import hero_home from '../assets/banner_1.png';
+import hero_home1 from '../assets/banner_2.png';
+import hero_home2 from '../assets/banner_3.png';
 import hero_homep from '../assets/hero_homep.png';
 import Interior from '../assets/Interior.png';
 import villa1 from '../assets/villa1.png';
@@ -24,19 +24,33 @@ const stats = [
   { icon: 'Construction', value: '3+', label: 'Ongoing Projects' },
 ];
 
-const aboutPoints = [
-  { icon: 'MapPin', title: 'Prime Locations', text: 'Carefully chosen locations for better living.' },
-  { icon: 'HardHat', title: 'Quality Construction', text: 'Built with the finest materials & modern technology.' },
-  { icon: 'Clock', title: 'Timely Delivery', text: 'On-time delivery with guaranteed excellence.' },
-  { icon: 'ShieldCheck', title: 'Transparent Process', text: 'Clear communication & complete transparency.' },
-  { icon: 'Users', title: 'Trusted By Many Families', text: 'Thousands of happy families trust us.' },
+const homeHeroSlideCopy = [
+  {
+    heading: ['Homes', 'that move', 'life forward.'],
+    caption: '3 BHK DUPLEX VILLAS',
+  },
+  {
+    heading: ['A HIGHER', 'WAY OF LIVING'],
+    caption: '3 BHK DUPLEX VILLAS',
+  },
+  {
+    heading: ['3 BHK', 'DUPLEX VILLAS'],
+    tagline: ['MORE SPACE.', 'A BRIGHTER TOMORROW.'],
+    price: '63.3',
+  },
 ];
 
-const why = [
-  { icon: 'MapPin', title: 'Prime Locations', text: 'Carefully selected locations with great connectivity and future growth.' },
-  { icon: 'Building2', title: 'Quality Construction', text: 'High-quality materials and modern construction techniques.' },
-  { icon: 'Clock', title: 'Timely Delivery', text: 'We value your time and ensure projects are delivered as promised.' },
-  { icon: 'Users', title: 'Trusted By Many', text: 'Hundreds of happy families who trust us for their dream homes.' },
+const aboutPoints = [
+  { icon: 'MapPin', title: 'Prime Locations', text: 'Conveniently located near everyday essentials.' },
+  { icon: 'HardHat', title: 'Quality Construction', text: 'Built with care and quality materials.' },
+  { icon: 'Clock', title: 'Timely Delivery', text: 'Committed to delivery timelines.' },
+  { icon: 'ShieldCheck', title: 'Transparent Process', text: 'Clear communication & complete transparency.' },
+];
+
+const projectJourney = [
+  { icon: 'Search', title: 'Explore', text: 'Compare projects and find a home that fits your plans.' },
+  { icon: 'MapPin', title: 'Visit', text: 'See the location, layout and surroundings in person.' },
+  { icon: 'MessageCircle', title: 'Decide', text: 'Get clear answers from our team before you take the next step.' },
 ];
 
 const reviews = [
@@ -105,6 +119,7 @@ export function ProjectCardCompact({ p }) {
 export default function Home() {
   const shown = [projects[0], projects[1], projects[2]];
   const [openFaq, setOpenFaq] = useState(null);
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [activeReview, setActiveReview] = useState(0);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
   const goToReview = useCallback((direction) => {
@@ -119,12 +134,52 @@ export default function Home() {
         <HeroCarousel
           className="home-hero-bg"
           label="Grand Reality featured homes"
+          onActiveSlideChange={setActiveHeroSlide}
           slides={[
             { src: hero_home, alt: 'Modern family home in a landscaped community' },
             { src: hero_home1, alt: 'A welcoming contemporary residential space' },
             { src: hero_home2, alt: 'Thoughtfully designed home by Grand Reality' },
           ]}
         />
+        {homeHeroSlideCopy[activeHeroSlide] && (
+          <div
+            key={activeHeroSlide}
+            className={`home-hero-slide-copy${homeHeroSlideCopy[activeHeroSlide].price ? ' has-price' : ''}`}
+            role="group"
+            aria-label={`Tesla City ${homeHeroSlideCopy[activeHeroSlide].heading.join(' ')}`}
+          >
+            <div className="home-hero-slide-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="currentColor" d="m12 5.362l2.475-3.026c3.101.169 5.989.908 8.619 2.115l-.147-.061a7.55 7.55 0 0 1-3.18 2.42l-.051.018c-.146-1.439-1.154-1.79-4.354-1.79L12.001 24L8.62 5.034c-3.18 0-4.188.354-4.335 1.792a7.53 7.53 0 0 1-3.216-2.409L1.056 4.4c2.481-1.148 5.369-1.889 8.409-2.057l.061-.003zm0-3.9c.107-.002.233-.002.359-.002c3.967 0 7.738.84 11.144 2.352l-.175-.069a9 9 0 0 0 .65-1.331L24 2.349C20.449.886 16.329.026 12.01.001H12A32.6 32.6 0 0 0-.218 2.429L0 2.35c.224.555.449 1.015.703 1.458L.672 3.75C3.91 2.302 7.689 1.459 11.666 1.459l.352.002z" />
+</svg>
+
+              <span className="home-hero-slide-tesla">TESLA</span>
+              <span className="home-hero-slide-city">CITY</span>
+              <span className="home-hero-slide-location">MOOLACHERI (PONMAR)</span>
+            </div>
+            <div className="home-hero-slide-details">
+              <h1>
+                {homeHeroSlideCopy[activeHeroSlide].heading.map((line) => <span key={line}>{line}</span>)}
+              </h1>
+              <span className="home-hero-slide-rule" aria-hidden="true" />
+              {homeHeroSlideCopy[activeHeroSlide].caption && (
+                <p className="home-hero-slide-caption">{homeHeroSlideCopy[activeHeroSlide].caption}</p>
+              )}
+              {homeHeroSlideCopy[activeHeroSlide].tagline && (
+                <p className="home-hero-slide-tagline">
+                  {homeHeroSlideCopy[activeHeroSlide].tagline.map((line) => <span key={line}>{line}</span>)}
+                </p>
+              )}
+              {homeHeroSlideCopy[activeHeroSlide].price && (
+                <div className="home-hero-slide-price">
+                  <span>STARTS FROM</span>
+                  <strong>₹{homeHeroSlideCopy[activeHeroSlide].price} <small>LAKHS<br />ONWARDS</small></strong>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
         
         <div className="container home-hero-inner">
           <div className="home-hero-copy">
@@ -152,17 +207,17 @@ export default function Home() {
         <div className="container two-col">
           <div className="ha-copy">
             <Eyebrow>About Grand Reality</Eyebrow>
-            <WaveText as="h2" className="h-lg">Commitment To Quality.<br /><em>Driven By Passion.</em></WaveText>
-            <p className="lead">Grand Reality is one of the most trusted real estate developers in Chennai. We build more than properties — we create lifestyles your family will cherish forever.</p>
+            <WaveText as="h2" className="h-lg">Built for Today.<br /><em> Valued for Generations.</em></WaveText>
+            <p className="lead">Grand Reality builds quality homes designed for modern living and lasting value across generations.</p>
             <ul className="point-list">
               {aboutPoints.map((p) => (
                 <li key={p.title}>
-                  <span className="ring"><Icon name={p.icon} size={20} /></span>
+                  <span ><Icon name={p.icon} size={20} /></span>
                   <div><strong>{p.title}</strong><span>{p.text}</span></div>
                 </li>
               ))}
             </ul>
-            <Link to="/about" className="link-arrow big">Know More About Us <Icon name="ArrowRight" size={19} /></Link>
+            <Link to="/about" className="link-arrow big">Discover Grand Reality<Icon name="ArrowRight" size={19} /></Link>
           </div>
           <div className="ha-visual">
             <div className="ha-photo">
@@ -194,20 +249,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
+      {/* PROJECT JOURNEY */}
       <section className="why-dark">
         <div className="container">
           <div className="why-intro">
-            <Eyebrow light>Why Choose Grand Reality</Eyebrow>
-            <WaveText as="h2" className="h-md light">Excellence<br /><em>In Every Step.</em></WaveText>
-            <p>From planning to possession, we ensure transparency, quality and a better tomorrow for every family.</p>
+            <Eyebrow light>A Simple Next Step</Eyebrow>
+            <WaveText as="h2" className="h-md light">Find Your Home,<br /><em>With Confidence.</em></WaveText>
+            <p>A straightforward way to explore, experience and choose your next home.</p>
           </div>
-          <div className="grid-5">
-            {why.map((w) => (
-              <div className="why-card" key={w.title}>
-                <Icon name={w.icon} size={40} strokeWidth={1.3} />
-                <h3>{w.title}</h3>
-                <p>{w.text}</p>
+          <div className="project-journey">
+            {projectJourney.map((step, index) => (
+              <div className="project-journey-step" key={step.title}>
+                <Icon name={step.icon} size={34} strokeWidth={1.7} />
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -237,7 +294,7 @@ export default function Home() {
           <div className="faq-heading">
             <Eyebrow center both>FAQs</Eyebrow>
             <WaveText as="h2" className="h-md">Frequently Asked <em>Questions</em></WaveText>
-            <p>Helpful answers about our projects and how to get started.</p>
+            <p>Helpful answers about our projects and how to get started</p>
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => {

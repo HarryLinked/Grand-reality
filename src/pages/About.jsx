@@ -1,10 +1,10 @@
 import Icon from '../components/Icon.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
-import thoughtfulDesignImage from '../assets/Thoughful_Design1.png';
-import premiumConstructionImage from '../assets/Premium_Construction1.png';
-import lifestyleCommunitiesImage from '../assets/Lifestyle_Communities2.png';
+import thoughtfulDesignIcon from '../assets/modern-house.svg';
+import premiumConstructionIcon from '../assets/hook.svg';
+import lifestyleCommunitiesIcon from '../assets/healthy-lifestyle-logo.svg';
 import Interior from '../assets/Interior.png';
-import about_hero from '../assets/about_hero.png';
+import about_hero from '../assets/about-hero.png';
 
 const values = [
   { icon: 'ShieldCheck', title: 'Quality First', text: 'We never compromise on quality. Excellence is our standard in every project.' },
@@ -21,9 +21,9 @@ const journey = [
 ];
 
 const why = [
-  { image: thoughtfulDesignImage, title: 'Thoughtful Design', text: 'Modern designs that blend aesthetics with functionality to enhance everyday living.' },
-  { image: premiumConstructionImage, title: 'Premium Construction', text: 'High-quality materials and superior construction for long-lasting value.' },
-  { image: lifestyleCommunitiesImage, title: 'Lifestyle Communities', text: 'Well-planned communities with amenities that enrich your lifestyle.' },
+  { image: thoughtfulDesignIcon, title: 'Thoughtful Design', text: 'Modern designs that blend aesthetics with functionality to enhance everyday living.' },
+  { image: premiumConstructionIcon, title: 'Premium Construction', text: 'High-quality materials and superior construction for long-lasting value.' },
+  { image: lifestyleCommunitiesIcon, title: 'Lifestyle Communities', text: 'Well-planned communities with amenities that enrich your lifestyle.' },
 ];
 
 export default function About() {
@@ -36,7 +36,7 @@ export default function About() {
             <Eyebrow>About Us</Eyebrow>
             <WaveText as="h1">Building More<br />Than Properties.<br /><em>Building Trust.</em></WaveText>
             <p>Grand Reality is one of the most trusted real estate developers in Chennai. We build more than properties – we create lifestyles that stand the test of time.</p>
-            <Btn href="#commit" variant="outline">Know More About Us</Btn>
+            <Btn href="#commit" variant="primary">Know More About Us</Btn>
           </div>
         </div>
         <div className="about-hero-img">

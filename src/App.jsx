@@ -82,23 +82,22 @@ export default function App() {
 
   useEffect(() => {
     const hero = document.querySelector('main > section:first-child, main > div > section:first-child');
-    if (!hero || !('IntersectionObserver' in window)) {
+    if (!hero) {
       setShowContactButton(true);
       return undefined;
     }
 
-    const compactViewport = window.matchMedia('(max-width: 980px)');
     const updateVisibility = () => {
-      setShowContactButton(compactViewport.matches || hero.getBoundingClientRect().bottom <= 0);
+      setShowContactButton(hero.getBoundingClientRect().bottom <= 0);
     };
-    const observer = new IntersectionObserver(updateVisibility);
-    observer.observe(hero);
-    compactViewport.addEventListener('change', updateVisibility);
+
     updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
 
     return () => {
-      observer.disconnect();
-      compactViewport.removeEventListener('change', updateVisibility);
+      window.removeEventListener('scroll', updateVisibility);
+      window.removeEventListener('resize', updateVisibility);
     };
   }, [pathname]);
 
@@ -121,10 +120,13 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      {showContactButton && (
-        <ContactButton className="contact-fab" icon="MessageCircle" iconSize={20}>
-        </ContactButton>
-      )}
+      <ContactButton
+        className={`contact-fab${showContactButton ? '' : ' is-hidden'}`}
+        icon="MessageCircle"
+        iconSize={20}
+        aria-hidden={!showContactButton}
+        tabIndex={showContactButton ? 0 : -1}
+      />
       {contactModalSubject !== null && (
         <ContactModal subject={contactModalSubject} onClose={closeContactModal} />
       )}

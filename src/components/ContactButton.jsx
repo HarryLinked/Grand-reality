@@ -7,6 +7,7 @@ export default function ContactButton({
   icon = 'ArrowUpRight',
   iconSize = 17,
   onClick,
+  ...rest
 }) {
   const openContactModal = () => {
     onClick?.();
@@ -14,7 +15,7 @@ export default function ContactButton({
   };
 
   return (
-    <button className={className} type="button" onClick={openContactModal}>
+    <button className={className} type="button" onClick={openContactModal} {...rest}>
       {children}
       {icon && <Icon name={icon} size={iconSize} />}
     </button>
