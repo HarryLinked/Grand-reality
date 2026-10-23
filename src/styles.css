@@ -3550,7 +3550,8 @@ em {
     top: -120px;
     bottom: -120px;
     left: -10%;
-    width: 150%;
+    right: 0;
+    width: auto;
   }
 
   .home-hero .home-hero-slide-details h1 {
