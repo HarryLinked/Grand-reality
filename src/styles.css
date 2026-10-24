@@ -2151,7 +2151,6 @@ em {
 .tesla-hero {
   position: relative;
   min-height: 600px;
-  background: #1a3385;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -3017,14 +3016,13 @@ em {
   display: grid;
   grid-template-columns: .85fr 2fr;
   gap: 40px;
-  background: var(--sand);
+  background: #dedede7a;
   border-radius: 16px;
   padding: 40px;
   box-shadow: var(--shadow);
 }
 
 .reg-copy p {
-  color: #3c4764;
   font-size: .9rem;
   line-height: 1.8;
 }
@@ -3372,11 +3370,11 @@ em {
 }
 
 .reg-copy p {
-  color: rgb(165, 165, 165);
+  color: rgb(63, 63, 63);
 }
 
 .secure {
-  color: rgb(165, 165, 165);
+  color: rgb(61, 61, 61);
 }
 
 #tesla-slider .ws-slide img {
@@ -3678,7 +3676,6 @@ em {
     width: 100%;
   }
 
-
   .tesla-photo,
   .ph-img {
     width: 100%;
@@ -3686,6 +3683,12 @@ em {
 
   .cp-hero-img {
     inset: 0;
+    opacity: .35;
+  }
+
+  
+  .contact-hero-carousel{
+    opacity: .35;
   }
 
   .loc-grid,
