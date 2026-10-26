@@ -9,6 +9,16 @@ npm start        # http://localhost:5173
 npm run build    # production build in /dist
 ```
 
+## Contact form submissions
+Copy `.env.example` to `.env.local` and set `VITE_SUPABASE_URL` to your
+Supabase project URL (for example, `https://your-project.supabase.co`), not its
+`/rest/v1/` API endpoint. Set `VITE_SUPABASE_PUBLISHABLE_KEY` to the project's
+publishable key. The client removes a trailing `/rest/v1/` if one is included.
+Run `supabase/enquiries.sql` in the Supabase SQL Editor to create the `enquiries`
+table and allow anonymous form submissions. The table must have `name`, `email`,
+`phone`, `subject`, and `message` columns. The form shows its success message
+only after Supabase confirms the insert.
+
 ## Pages / routes
 | Route | Page |
 |---|---|
@@ -30,7 +40,7 @@ npm run build    # production build in /dist
   **Swap in your original high-res photos using the same file names** and nothing else needs changing.
 
 ## Things to finish
-- Forms (Contact, Channel Partner, Newsletter) validate and show a success state but do not send anywhere yet – look for the `TODO` comments and connect your API / email service.
+- Channel Partner and Newsletter forms validate and show a success state but do not send anywhere yet – connect them to your API / email service.
 - Maps use a Google Maps embed (no API key). Update `mapQuery` in `src/data.js` for exact pins.
 - "Download Brochure" has no file yet – point it at a PDF in `public/`.
 - Grand Square page text, Privacy Policy and Terms are placeholder copy.

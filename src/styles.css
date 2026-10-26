@@ -3101,6 +3101,12 @@ em {
   font-size: .74rem;
 }
 
+.form-submit-error {
+  margin: 0;
+  color: #c9211e;
+  font-size: .85rem;
+}
+
 .form-foot {
   display: flex;
   flex-direction: column;
