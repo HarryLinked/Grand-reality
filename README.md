@@ -19,6 +19,15 @@ table and allow anonymous form submissions. The table must have `name`, `email`,
 `phone`, `subject`, and `message` columns. The form shows its success message
 only after Supabase confirms the insert.
 
+## Channel partner applications
+Run `supabase/channel_partner_applications.sql` in the Supabase SQL Editor to
+create the `channel_partner_applications` table and the private
+`channel-partner-id-proofs` Storage bucket. The form saves first name, last name,
+email, city, phone, real-estate experience, company, business description, and
+the uploaded ID proof's storage path. ID proof files are limited to 10 MB and
+PDF, JPEG, or PNG formats. The application form reports success only after both
+the file upload and database insert succeed.
+
 ## Pages / routes
 | Route | Page |
 |---|---|
@@ -40,7 +49,7 @@ only after Supabase confirms the insert.
   **Swap in your original high-res photos using the same file names** and nothing else needs changing.
 
 ## Things to finish
-- Channel Partner and Newsletter forms validate and show a success state but do not send anywhere yet – connect them to your API / email service.
+- Newsletter form validates and shows a success state but does not send anywhere yet – connect it to your API / email service.
 - Maps use a Google Maps embed (no API key). Update `mapQuery` in `src/data.js` for exact pins.
 - "Download Brochure" has no file yet – point it at a PDF in `public/`.
 - Grand Square page text, Privacy Policy and Terms are placeholder copy.
