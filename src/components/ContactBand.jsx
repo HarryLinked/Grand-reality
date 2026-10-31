@@ -6,7 +6,7 @@ import { company } from '../data.js';
 export function QuestionsBand() {
   return (
     <section className="container">
-      <div className="questions-band">
+      <div className="questions-band blue-banner">
         <span className="bubble solid"><Icon name="Phone" size={26} /></span>
         <div className="qb-text">
           <h3>Have Questions?</h3>

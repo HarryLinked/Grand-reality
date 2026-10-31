@@ -88,8 +88,8 @@ export const completedProjects = {
       { icon: 'BrickWall', label: 'Compound Wall', detail: 'A compound wall defines the development and helps create a sense of privacy.', image: Walls },
     ],
     near: [
-      ['Kandigai Junction', '8 mins'], ['Vandalur Railway Station', '15 mins'], ['GST Road', '15 mins'], ['New CMBT Bus Terminus ', '15 mins'], ['Chengalpet', '20 mins'], ['Urapakkam Railway Station', '15 mins'], ['Tambaram', '20 mins'], ['Kelambakkam Junction', '15 mins'],
-      ['SRM Public School', '15 mins'], ['Chennai International Airport', '25 mins'],
+      ['Kandigai Junction', '8 mins'], ['Vandalur Railway Station', '15 mins'], ['GST Road', '15 mins'], ['New CMBT Bus Terminus ', '15 mins'], ['Urapakkam Railway Station', '15 mins'], ['Kelambakkam Junction', '15 mins'],
+      ['SRM Public School', '15 mins'], ['Chengalpet', '20 mins'] ,  ['Tambaram', '20 mins'] , ['Chennai International Airport', '25 mins'],
     ],
     locationAdvantages: [
       {

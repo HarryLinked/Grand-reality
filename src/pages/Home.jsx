@@ -12,6 +12,8 @@ import hero_home from '../assets/banner_1.png';
 import hero_home1 from '../assets/banner_2.png';
 import hero_home2 from '../assets/banner_3.png';
 import hero_homep from '../assets/hero_homep.png';
+import tabletHomeHero from '../assets/tablet_hero_home.png';
+import mobileHomeHero from '../assets/mobile_hero_home.png';
 import Interior from '../assets/Interior.png';
 import villa1 from '../assets/villa1.png';
 import villa2 from '../assets/villa2.png';

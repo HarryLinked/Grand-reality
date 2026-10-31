@@ -41,16 +41,28 @@ export function HeroCarousel({ slides, mobile_slides, label = 'Featured images',
       }}
     >
       <div className="hero-carousel-images" aria-live="polite">
-        {slides.map((slide, index) => (
-          <img
-            key={slide.src}
-            className={`hero-carousel-image${index === activeSlide ? ' is-active' : ''}`}
-            src={slide.src}
-            alt={index === activeSlide ? slide.alt || '' : ''}
-            aria-hidden={index !== activeSlide}
-            loading={index === 0 ? 'eager' : 'lazy'}
-          />
-        ))}
+        {slides.map((slide, index) => {
+          const image = (
+            <img
+              key={slide.src}
+              className={`hero-carousel-image${index === activeSlide ? ' is-active' : ''}`}
+              src={slide.src}
+              alt={index === activeSlide ? slide.alt || '' : ''}
+              aria-hidden={index !== activeSlide}
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          );
+
+          return slide.tabletSrc || slide.mobileSrc ? (
+            <picture key={slide.src}>
+              {slide.mobileSrc && <source media="(max-width: 680px)" srcSet={slide.mobileSrc} />}
+              {slide.tabletSrc && <source media="(max-width: 980px)" srcSet={slide.tabletSrc} />}
+              {image}
+            </picture>
+          ) : (
+            image
+          );
+        })}
       </div>
       
       {!hideControls && (
