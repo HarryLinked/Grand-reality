@@ -1,6 +1,6 @@
 import Icon from '../components/Icon.jsx';
 import MapEmbed from '../components/Map.jsx';
-import { WindowSlider } from '../components/Slider.jsx';
+import { HeroCarousel, WindowSlider } from '../components/Slider.jsx';
 import { Btn, Eyebrow, WaveText } from '../components/Shared.jsx';
 import LocationAccordion from '../components/LocationAccordion.jsx';
 import SpecificationShowcase from '../components/SpecificationShowcase.jsx';
@@ -19,7 +19,9 @@ import spec_roads from '../assets/icon-blacktop-roads.webp';
 import security from '../assets/Secure_Environment.png';
 import parks from '../assets/parks_&_greens.png';
 import road from '../assets/Narrow_road.png';
-import night from '../assets/Tesla.png';
+import day from '../assets/Tesla.png';
+import day1 from '../assets/tablet-tesla-hero.png';
+import day2 from '../assets/mobile-tesla-hero.png';
 
 
 const amenities = [
@@ -48,11 +50,17 @@ export default function TeslaCity() {
   return (
     <>
       <section className="tesla-hero">
-        <div className="hero-carousel tesla-photo">
-          <div className="hero-carousel-images">
-            <img className="hero-carousel-image is-active" src={night} alt="The entrance to Tesla City" />
-          </div>
-        </div>
+        <HeroCarousel
+          className="tesla-photo"
+          label="Tesla City hero image"
+          hideControls
+          slides={[{
+            src: day,
+            tabletSrc: day1,
+            mobileSrc: day2,
+            alt: 'The entrance to Tesla City',
+          }]}
+        />
         <div className="container tesla-copy">
           <span className="intro">Introducing</span><br />
           <WaveText as="h1">TESLA CITY</WaveText>

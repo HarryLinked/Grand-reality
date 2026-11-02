@@ -12,14 +12,27 @@ export function useCarouselAutoplay(advance, { paused = false, interval = 2000 }
   }, [advance, interval, paused]);
 }
 
-export function HeroCarousel({ slides, mobile_slides, label = 'Featured images', className = '', hideControls = false, onActiveSlideChange }) {
+export function HeroCarousel({ slides, mobile_slides, label = 'Featured images', className = '', hideControls = false, pauseOnHover = true, enableSwipe = false, onActiveSlideChange }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
   const advance = useCallback(
     () => setActiveSlide((current) => (current + 1) % slides.length),
     [slides.length],
   );
   const go = (direction) => setActiveSlide((current) => (current + direction + slides.length) % slides.length);
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.changedTouches[0].clientX;
+  };
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) return;
+
+    const distance = event.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(distance) < 50) return;
+
+    go(distance < 0 ? 1 : -1);
+  };
 
   useCarouselAutoplay(advance, { paused: isPaused || slides.length < 2, interval: 3000 });
   useEffect(() => {
@@ -33,12 +46,14 @@ export function HeroCarousel({ slides, mobile_slides, label = 'Featured images',
       role="region"
       aria-label={label}
       aria-roledescription="carousel"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={pauseOnHover ? () => setIsPaused(true) : undefined}
+      onMouseLeave={pauseOnHover ? () => setIsPaused(false) : undefined}
       onFocusCapture={() => setIsPaused(true)}
       onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
       }}
+      onTouchStart={enableSwipe ? handleTouchStart : undefined}
+      onTouchEnd={enableSwipe ? handleTouchEnd : undefined}
     >
       <div className="hero-carousel-images" aria-live="polite">
         {slides.map((slide, index) => {

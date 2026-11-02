@@ -18,6 +18,12 @@ import Interior from '../assets/Interior.png';
 import villa1 from '../assets/villa1.png';
 import villa2 from '../assets/villa2.png';
 import villa2k from '../assets/villa2k.jpg';
+import hero_home_mobile from '../assets/mobile-hero-home.png';
+import hero_home_mobile1 from '../assets/mobile-hero-home1.png';
+import hero_home_mobile2 from '../assets/mobile-hero-home2.png';
+import hero_home_tablet from '../assets/tablet-hero-home.png';
+import hero_home_tablet1 from '../assets/tablet-hero-home1.png';
+import hero_home_tablet2 from '../assets/tablet-hero-home2.png';
 
 const stats = [
   { icon: 'Medal', value: '10+', label: 'Years of Experience' },
@@ -136,11 +142,13 @@ export default function Home() {
         <HeroCarousel
           className="home-hero-bg"
           label="Grand Reality featured homes"
+          pauseOnHover={false}
+          enableSwipe
           onActiveSlideChange={setActiveHeroSlide}
           slides={[
-            { src: hero_home, alt: 'Modern family home in a landscaped community' },
-            { src: hero_home1, alt: 'A welcoming contemporary residential space' },
-            { src: hero_home2, alt: 'Thoughtfully designed home by Grand Reality' },
+            { src: hero_home, tabletSrc: hero_home_tablet, mobileSrc: hero_home_mobile, alt: 'Modern family home in a landscaped community' },
+            { src: hero_home1, tabletSrc: hero_home_tablet1, mobileSrc: hero_home_mobile1, alt: 'A welcoming contemporary residential space' },
+            { src: hero_home2, tabletSrc: hero_home_tablet2, mobileSrc: hero_home_mobile2, alt: 'Thoughtfully designed home by Grand Reality' },
           ]}
         />
         {homeHeroSlideCopy[activeHeroSlide] && (
@@ -160,26 +168,26 @@ export default function Home() {
               <span className="home-hero-slide-city">CITY</span>
               <span className="home-hero-slide-location">MOOLACHERI (PONMAR)</span>
             </div>
-            <div className="home-hero-slide-details">
-              <h1>
+            <p className="home-hero-slider-text">
+              <span className="home-hero-slider-heading" role="heading" aria-level="1">
                 {homeHeroSlideCopy[activeHeroSlide].heading.map((line) => <span key={line}>{line}</span>)}
-              </h1>
+              </span>
               <span className="home-hero-slide-rule" aria-hidden="true" />
               {homeHeroSlideCopy[activeHeroSlide].caption && (
-                <p className="home-hero-slide-caption">{homeHeroSlideCopy[activeHeroSlide].caption}</p>
+                <span className="home-hero-slide-caption">{homeHeroSlideCopy[activeHeroSlide].caption}</span>
               )}
               {homeHeroSlideCopy[activeHeroSlide].tagline && (
-                <p className="home-hero-slide-tagline">
+                <span className="home-hero-slide-tagline">
                   {homeHeroSlideCopy[activeHeroSlide].tagline.map((line) => <span key={line}>{line}</span>)}
-                </p>
+                </span>
               )}
               {homeHeroSlideCopy[activeHeroSlide].price && (
-                <div className="home-hero-slide-price">
+                <span className="home-hero-slide-price">
                   <span>STARTS FROM</span>
                   <strong>₹{homeHeroSlideCopy[activeHeroSlide].price} <small>LAKHS<br />ONWARDS</small></strong>
-                </div>
+                </span>
               )}
-            </div>
+            </p>
           </div>
         )}
         

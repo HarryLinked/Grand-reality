@@ -1,10 +1,13 @@
 import Icon from '../components/Icon.jsx';
+import { HeroCarousel } from '../components/Slider.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
 import thoughtfulDesignIcon from '../assets/modern-house.svg';
 import premiumConstructionIcon from '../assets/hook.svg';
 import lifestyleCommunitiesIcon from '../assets/healthy-lifestyle-logo.svg';
 import Interior from '../assets/Interior.png';
 import about_hero from '../assets/about-hero.png';
+import about_hero1 from '../assets/tablet-about-hero.png';
+import about_hero2 from '../assets/mobile-about-hero.png';
 
 const values = [
   { icon: 'ShieldCheck', title: 'Quality First', text: 'We never compromise on quality. Excellence is our standard in every project.' },
@@ -40,11 +43,17 @@ export default function About() {
           </div>
         </div>
         <div className="about-hero-img">
-          <div className="hero-carousel about-hero-carousel">
-            <div className="hero-carousel-images">
-              <img className="hero-carousel-image is-active" src={about_hero} alt="A home designed by Grand Reality" />
-            </div>
-          </div>
+          <HeroCarousel
+            className="about-hero-carousel"
+            label="About Grand Reality hero image"
+            hideControls
+            slides={[{
+              src: about_hero,
+              tabletSrc: about_hero1,
+              mobileSrc: about_hero2,
+              alt: 'A home designed by Grand Reality',
+            }]}
+          />
         </div>
       </section>
 
@@ -76,7 +85,6 @@ export default function About() {
             <Eyebrow light>Our Journey</Eyebrow>
             <h2 className="h-md light">A Legacy Built on<br />Hard Work &amp; Integrity.</h2>
             <p>From humble beginnings to becoming a trusted name in real estate, our journey has been built on hard work, integrity and the trust of our customers.</p>
-            <Btn href="#journey" variant="outline-light">Our Journey</Btn>
           </div>
           <ol className="timeline">
             {journey.map((j) => (

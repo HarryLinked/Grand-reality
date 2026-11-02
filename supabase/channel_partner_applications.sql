@@ -29,7 +29,6 @@ create policy "Allow anonymous channel partner applications"
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values (
   'channel-partner-id-proofs',
-  'channel-partner-id-proofs',
   false,
   10485760,
   array['application/pdf', 'image/jpeg', 'image/png']

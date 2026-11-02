@@ -3,6 +3,7 @@ import Icon from '../components/Icon.jsx';
 import Field, { validate } from '../components/Field.jsx';
 import { QuestionsBand } from '../components/ContactBand.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
+import { HeroCarousel } from '../components/Slider.jsx';
 import { supabase } from '../supabase.js';
 import channel_partner_hero from '../assets/channel-partner-hero.png';
 
@@ -103,11 +104,17 @@ export default function ChannelPartners() {
   return (
     <>
       <section className="partner-hero">
-        <div className="hero-carousel ph-img">
-          <div className="hero-carousel-images">
-            <img className="hero-carousel-image is-active" src={channel_partner_hero} alt="Grand Reality channel partner network" />
-          </div>
-        </div>
+        <HeroCarousel
+          className="ph-img"
+          label="Channel partners hero image"
+          hideControls
+          slides={[{
+            src: channel_partner_hero,
+            tabletSrc: channel_partner_hero,
+            mobileSrc: channel_partner_hero,
+            alt: 'Grand Reality channel partner network',
+          }]}
+        />
         <div className="container ph-copy">
           <Eyebrow>Partner With Us</Eyebrow>
           <WaveText as="h1">Let’s Build<br />Success <em>Together.</em></WaveText>

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Icon from '../components/Icon.jsx';
 import ContactForm from '../components/ContactForm.jsx';
 import MapEmbed from '../components/Map.jsx';
+import { HeroCarousel } from '../components/Slider.jsx';
 import { Eyebrow, WaveText } from '../components/Shared.jsx';
 import { company } from '../data.js';
 import homeaboutfinal from '../assets/Contact_hero.png';
@@ -20,11 +21,17 @@ export default function Contact() {
   return (
     <>
       <section className="contact-hero">
-        <div className="hero-carousel contact-hero-carousel">
-          <div className="hero-carousel-images">
-            <img className="hero-carousel-image is-active" src={homeaboutfinal} alt="A home by Grand Reality" />
-          </div>
-        </div>
+        <HeroCarousel
+          className="contact-hero-carousel"
+          label="Contact hero image"
+          hideControls
+          slides={[{
+            src: homeaboutfinal,
+            tabletSrc: homeaboutfinal,
+            mobileSrc: homeaboutfinal,
+            alt: 'A home by Grand Reality',
+          }]}
+        />
         <div className="container ch-copy">
           <span className="eyebrow">Get In Touch</span>
           <WaveText as="h1">We’d Love to <br />Hear From <em>You</em></WaveText>
