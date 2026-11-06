@@ -65,7 +65,6 @@ export default function TeslaCity() {
           <span className="intro">Introducing</span><br />
           <WaveText as="h1">TESLA CITY</WaveText>
           <p className="ponmar">PONMAR</p>
-          <p className="tag">Premium Villa Plots for a Lifestyle<br />That Defines You.</p>
         </div>
       </section>
 

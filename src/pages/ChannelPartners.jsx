@@ -6,6 +6,8 @@ import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
 import { HeroCarousel } from '../components/Slider.jsx';
 import { supabase } from '../supabase.js';
 import channel_partner_hero from '../assets/channel-partner-hero.png';
+import channel_partner_hero1 from '../assets/tablet-channelPartner-hero.png';
+import channel_partner_hero2 from '../assets/mobile-channelPartner-hero.png';
 
 const idProofBucket = 'channel-partner-id-proofs';
 
@@ -110,15 +112,14 @@ export default function ChannelPartners() {
           hideControls
           slides={[{
             src: channel_partner_hero,
-            tabletSrc: channel_partner_hero,
-            mobileSrc: channel_partner_hero,
+            tabletSrc: channel_partner_hero1,
+            mobileSrc: channel_partner_hero2,
             alt: 'Grand Reality channel partner network',
           }]}
         />
         <div className="container ph-copy">
           <Eyebrow>Partner With Us</Eyebrow>
           <WaveText as="h1">Let’s Build<br />Success <em>Together.</em></WaveText>
-          <p>Join our channel partner network and grow your business with a brand that delivers trust, quality and value.</p>
           <Btn href="#register">Become a Partner</Btn>
         </div>
       </section>

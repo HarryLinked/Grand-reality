@@ -7,6 +7,8 @@ import { HeroCarousel } from '../components/Slider.jsx';
 import { Eyebrow, WaveText } from '../components/Shared.jsx';
 import { company } from '../data.js';
 import homeaboutfinal from '../assets/Contact_hero.png';
+import homeaboutfinal1 from '../assets/tablet-contact-hero.png';
+import homeaboutfinal2 from '../assets/mobile-contact-hero.png';
 
 export default function Contact() {
   const [params] = useSearchParams();
@@ -27,8 +29,8 @@ export default function Contact() {
           hideControls
           slides={[{
             src: homeaboutfinal,
-            tabletSrc: homeaboutfinal,
-            mobileSrc: homeaboutfinal,
+            tabletSrc: homeaboutfinal1,
+            mobileSrc: homeaboutfinal2,
             alt: 'A home by Grand Reality',
           }]}
         />

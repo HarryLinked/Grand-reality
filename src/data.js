@@ -25,7 +25,7 @@ import Mayura from './assets/Mayura.png';
 import mayura_plot from './assets/mayura_plot.png';
 import mayura_plot_road from './assets/mayura_plot_road.png';
 import Sri_Mayura_Entrance from './assets/Sri_Mayura_Gated.png';
-import Sri_Mayura_Entrance1 from './assets/tablet-mayura-hero.png';
+import Sri_Mayura_Entrance1 from './assets/tablet-mayura-home.png';
 import Sri_Mayura_Entrance2 from './assets/mobile-mayura-hero.png';
 
 

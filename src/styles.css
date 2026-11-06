@@ -2187,6 +2187,7 @@ em {
 
 .tesla-copy {
   position: relative;
+  top: -60px;
   z-index: 2;
   color: var(--green);
 }
@@ -2971,6 +2972,8 @@ em {
   z-index: 2;
   color: #050505;
   padding: 0;
+  position: relative;
+  top: 50px;
 }
 
 .ph-copy h1 {
@@ -3869,6 +3872,10 @@ em {
     color: #172d40;
     text-align: center;
   }
+
+  .ch-copy{
+    top: -80px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -4156,6 +4163,18 @@ em {
   .faq-answer p {
     padding: 0 16px 18px;
     font-size: .86rem;
+  }
+
+  .ph-copy .wave-text{
+    position: relative;
+    top: -180px;
+  }
+
+  .ph-copy .btn-primary{
+    position: relative;
+    top: 50px;
+    width: 150px;
+    font-size: .720rem;
   }
 }
 
@@ -4637,11 +4656,6 @@ em {
     min-height: 600px;
   }
 
-  .tesla-copy,
-  .ph-copy {
-    width: min(1800px, calc(100% - 96px));
-  }
-
   .cp-hero {
     min-height: 600px;
   }
@@ -4897,6 +4911,21 @@ em {
   .hero-carousel-pagination {
     bottom: 100px;
   }
+  .tesla-copy{
+    position: relative;
+    left: -250px;
+  }
+
+  .cp-hero-copy{
+    position: relative;
+    left: 50px;
+  }
+
+  .partner-hero .ph-copy{
+    position: relative;
+    left: -250px;
+  }
+
 }
 
 @media (max-width: 427px){
@@ -5040,6 +5069,10 @@ em {
   width: 15px;
   height: 15px;
 }
+.cp-hero-copy{
+  position: relative;
+  top: -100px;
+}
 }
 
 @media (max-width: 680px) {
@@ -5132,7 +5165,6 @@ em {
   width: 28px;
   height: 28px;
 }
-}
 
 .home-hero-slide-copy,
 .about-hero-copy,
@@ -5170,4 +5202,16 @@ em {
 .tesla-copy .rule,
 .tesla-copy .squig {
   margin-inline: auto;
+}
+}
+
+@media(680<=width<=980px){
+  .home-hero-slide-copy,
+  .about-hero-copy,
+  .tesla-copy,
+  .cp-hero-copy,
+  .ph-copy,
+  .ch-copy {
+    text-align: center;
+  }
 }

@@ -38,8 +38,6 @@ export default function About() {
           <div className="about-hero-copy">
             <Eyebrow>About Us</Eyebrow>
             <WaveText as="h1">Building More<br />Than Properties.<br /><em>Building Trust.</em></WaveText>
-            <p>Grand Reality is one of the most trusted real estate developers in Chennai. We build more than properties – we create lifestyles that stand the test of time.</p>
-            <Btn href="#commit" variant="primary">Know More About Us</Btn>
           </div>
         </div>
         <div className="about-hero-img">

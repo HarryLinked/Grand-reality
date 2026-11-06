@@ -1,7 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom';
 import Icon from '../components/Icon.jsx';
 import MapEmbed from '../components/Map.jsx';
-import { ThumbGallery } from '../components/Slider.jsx';
+import { HeroCarousel, ThumbGallery } from '../components/Slider.jsx';
 import { BlueBanner } from '../components/ContactBand.jsx';
 import { Btn, Eyebrow, IconBubble, WaveText } from '../components/Shared.jsx';
 import LocationAccordion from '../components/LocationAccordion.jsx';
@@ -16,11 +16,17 @@ export default function CompletedProject() {
   return (
     <>
       <section className="cp-hero">
-        <div className="hero-carousel cp-hero-img">
-          <div className="hero-carousel-images">
-            <img className="hero-carousel-image is-active" src={p.heroImages[0]} alt={`${fullName} featured image 1`} />
-          </div>
-        </div>
+        <HeroCarousel
+          className="cp-hero-img"
+          label={`${fullName} hero image`}
+          hideControls
+          slides={[{
+            src: p.heroImages[0],
+            tabletSrc: p.heroImages[1],
+            mobileSrc: p.heroImages[2],
+            alt: `${fullName} featured image`,
+          }]}
+        />
         <div className="container">
           <div className="cp-hero-copy">
             <Eyebrow>Completed Project</Eyebrow>
