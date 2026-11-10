@@ -56,7 +56,7 @@ export default function About() {
       </section>
 
       {/* COMMITMENT */}
-      <section className="commit" id="commit">
+      <section className="container commit" id="commit">
         <img className="commit-img" src={Interior} alt="Interior designed by Grand Reality" loading="lazy" />
         <div className="commit-inner">
           <div className="commit-copy">
@@ -77,7 +77,7 @@ export default function About() {
       </section>
 
       {/* JOURNEY */}
-      <section className="journey" id="journey">
+      <section className=" journey" id="journey">
         <div className="container journey-inner">
           <div className="journey-copy">
             <Eyebrow light>Our Journey</Eyebrow>

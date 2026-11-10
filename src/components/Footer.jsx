@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -41,7 +41,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="project-links">
           <h4>Projects</h4>
           <ul>
             <li><Link to="/projects/tesla-city">Tesla City</Link></li>
@@ -59,7 +59,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="newsletter">
           <h4>Newsletter</h4>
           <p className="news-text">Subscribe to get updates on our latest projects and offers.</p>
           {done ? (
@@ -73,9 +73,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container footer-bottom">
-        <span>© 2026 Grand Reality. All Rights Reserved.</span>
-        <span className="legal"><Link to="/privacy-policy">Privacy Policy</Link><i /><Link to="/terms">Terms &amp; Conditions</Link></span>
+      <div className="footer-bottom">
+        <div className="container copyright">
+          <span>© 2026 Grand Reality. All Rights Reserved.</span>
+          <span className="legal"><Link to="/privacy-policy">Privacy Policy</Link><i /><Link to="/terms">Terms &amp; Conditions</Link></span>
+        </div>
       </div>
     </footer>
   );

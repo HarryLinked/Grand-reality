@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import { navItems } from '../data.js';
@@ -10,6 +10,8 @@ export default function Header() {
   const [sub, setSub] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
+  const navRef = useRef(null);
+  const activeIndicatorRef = useRef(null);
 
   useEffect(() => { setOpen(false); setSub(null); }, [pathname]);
   useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; }, [open]);
@@ -32,6 +34,31 @@ export default function Header() {
     };
   }, [pathname]);
 
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const indicator = activeIndicatorRef.current;
+    if (!nav || !indicator) return undefined;
+
+    const updateIndicator = () => {
+      const activeLink = nav.querySelector('.nav-link.active');
+      if (!activeLink) {
+        indicator.style.opacity = '0';
+        return;
+      }
+
+      const navRect = nav.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+      indicator.style.width = `${linkRect.width}px`;
+      indicator.style.height = `${linkRect.height}px`;
+      indicator.style.transform = `translate3d(${linkRect.left - navRect.left}px, ${linkRect.top - navRect.top}px, 0)`;
+      indicator.style.opacity = '1';
+    };
+
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [pathname, sub]);
+
   const isActive = (item) =>
     item.children ? item.children.some((c) => pathname === c.to) : item.to === '/' ? pathname === '/' : pathname.startsWith(item.to);
 
@@ -42,7 +69,8 @@ export default function Header() {
           <img src={Grand_Reality_Logo} alt="Grand Reality" width="88" height="80" />
         </Link>
 
-        <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
+        <nav ref={navRef} className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary">
+          <span ref={activeIndicatorRef} className="nav-active-indicator" aria-hidden="true" />
           <ul>
             {navItems.map((item) => (
               <li key={item.label} className={`nav-item ${item.children ? 'has-sub' : ''} ${sub === item.label ? 'sub-open' : ''}`}>
@@ -54,7 +82,8 @@ export default function Header() {
                       aria-expanded={sub === item.label}
                       onClick={() => setSub(sub === item.label ? null : item.label)}
                     >
-                      {item.label} <Icon name="ChevronDown" size={15} strokeWidth={2.4} />
+                      <span className="nav-link-label">{item.label}</span>
+                      <Icon name="ChevronDown" size={15} strokeWidth={2.4} />
                     </button>
                     <ul className="sub-menu">
                       {item.children.map((c) => (
@@ -75,7 +104,7 @@ export default function Header() {
                   </>
                 ) : (
                   <NavLink to={item.to} end={item.to === '/'} className={`nav-link ${isActive(item) ? 'active' : ''}`}>
-                    {item.label}
+                    <span className="nav-link-label">{item.label}</span>
                   </NavLink>
                 )}
               </li>
